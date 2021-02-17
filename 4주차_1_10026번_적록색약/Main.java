@@ -60,32 +60,29 @@ public class Main {
 		}
 		
 		for(int i = 0; i < N; i++) {
-            for(int j = 0; j < N; j++) {
-                if(map[i][j] == 'G') { // 녹색을 빨간색으로 변경
-                    map[i][j] = 'R';
-                }
-            }
-        }
+            		for(int j = 0; j < N; j++) {
+                		if(map[i][j] == 'G') { // 녹색을 빨간색으로 변경
+                    			map[i][j] = 'R';
+                		}
+            		}
+        	}
         
-        for(int i = 0; i < N; i++) {
-            for(int j = 0; j < N; j++) {
-                if(!visited[i][j]) {
-                    bfs(new Node(i,j)); // bfs
-                    rst2++;
-                }
-            }
-        }
+        	for(int i = 0; i < N; i++) {
+            		for(int j = 0; j < N; j++) {
+                		if(!visited[i][j]) {
+                    			bfs(new Node(i,j)); // bfs
+                    			rst2++;
+                		}
+            		}
+        	}
         
-        sb.append(rst1).append(" ").append(rst2);
-        bw.write(sb.toString());
-        bw.flush();
-        br.close();
-        bw.close();
-
+        	sb.append(rst1).append(" ").append(rst2);
+        	bw.write(sb.toString());
+        	bw.flush();
+        	br.close();
+        	bw.close();
 	}
-
-
-
+	
 	static void bfs(Node node) {
 		char color = map[node.y][node.x]; // 현재 그림의 색
 		visited[node.y][node.x] = true; // 방문
